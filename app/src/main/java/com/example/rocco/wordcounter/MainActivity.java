@@ -29,7 +29,14 @@ public class MainActivity extends AppCompatActivity {
         wordCountView = findViewById(R.id.answer_textview);
     }
 
-    public void onCountWordButtonClicked(View clickedView) {
+    public void onCountWordButtonClicked1(View clickedView) {
+         String sentenceThatWasEntered = userInput.getText().toString();
+         WordCount wordCount = new WordCount();
+         int getWordsCount = wordCount.getWordCount(sentenceThatWasEntered);
+         wordCountView.setText("The number of words is " + getWordsCount);
+    }
+
+    public void onCountWordButtonClicked2(View clickedView) {
         Log.e("MainActivity", "count word button clicked");
 
         String wordcount = "";
@@ -46,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 words.put(word, 1);
             }
-
 
         }
 
